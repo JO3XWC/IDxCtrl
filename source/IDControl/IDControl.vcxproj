@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4B18C1AF-A2BD-4EF1-934F-466FDAC2DE3F}</ProjectGuid>
+    <RootNamespace>IDControl</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>IDxCtrl</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>obj\$(Configuration)\$(Platform)\</IntDir>
+    <OutDir>$(SolutionDir)..\$(Configuration)\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\CI-V.h" />
+    <ClInclude Include="..\Common\CMd5.h" />
+    <ClInclude Include="..\Common\CMemFileEx.h" />
+    <ClInclude Include="..\Common\CTcpCommon.h" />
+    <ClInclude Include="..\Common\CTcpServer.h" />
+    <ClInclude Include="..\Common\CTcpServerCmd.h" />
+    <ClInclude Include="..\Common\Debug.h" />
+    <ClInclude Include="..\Common\CDirectSound.h" />
+    <ClInclude Include="..\Common\CDirectSoundCommon.h" />
+    <ClInclude Include="..\Common\CDirectSoundBuffer.h" />
+    <ClInclude Include="..\Common\CWavePlay.h" />
+    <ClInclude Include="..\Common\g711.h" />
+    <ClInclude Include="..\Common\NoDebug.h" />
+    <ClInclude Include="..\Common\plugin.h" />
+    <ClInclude Include="..\Common\Utility.h" />
+    <ClInclude Include="CAnalogFreqView.h" />
+    <ClInclude Include="CCIVCache.h" />
+    <ClInclude Include="CCommonView.h" />
+    <ClInclude Include="CCustomButton.h" />
+    <ClInclude Include="CCustomComboBox.h" />
+    <ClInclude Include="CCustomDC.h" />
+    <ClInclude Include="CCustomEdit.h" />
+    <ClInclude Include="CCustomImageWnd.h" />
+    <ClInclude Include="CDigitalFreqView.h" />
+    <ClInclude Include="CDlgEdit.h" />
+    <ClInclude Include="CDlgMyCallsign.h" />
+    <ClInclude Include="CDlgSoundSetting.h" />
+    <ClInclude Include="CDlgTrxSetting.h" />
+    <ClInclude Include="CDebugView.h" />
+    <ClInclude Include="CCallsignHistoryView.h" />
+    <ClInclude Include="CFreqDisplayCtrl.h" />
+    <ClInclude Include="CGpsHistoryView.h" />
+    <ClInclude Include="CListCtrlEx.h" />
+    <ClInclude Include="CMessageHistoryView.h" />
+    <ClInclude Include="CRepeater.h" />
+    <ClInclude Include="CRepeaterView.h" />
+    <ClInclude Include="CScrollWnd.h" />
+    <ClInclude Include="CSMeterDisplayCtrl.h" />
+    <ClInclude Include="IDControl.h" />
+    <ClInclude Include="IDControlDoc.h" />
+    <ClInclude Include="IDControlView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\CMd5.cpp" />
+    <ClCompile Include="..\Common\CMemFileEx.cpp" />
+    <ClCompile Include="..\Common\CTcpServer.cpp" />
+    <ClCompile Include="..\Common\CTcpServerCmd.cpp" />
+    <ClCompile Include="..\Common\Debug.cpp" />
+    <ClCompile Include="..\Common\CDirectSound.cpp" />
+    <ClCompile Include="..\Common\CDirectSoundBuffer.cpp" />
+    <ClCompile Include="..\Common\CWavePlay.cpp" />
+    <ClCompile Include="..\Common\g711.cpp" />
+    <ClCompile Include="..\Common\plugin.cpp" />
+    <ClCompile Include="..\Common\Utility.cpp" />
+    <ClCompile Include="CAnalogFreqView.cpp" />
+    <ClCompile Include="CCIVCache.cpp" />
+    <ClCompile Include="CCommonView.cpp" />
+    <ClCompile Include="CCustomButton.cpp" />
+    <ClCompile Include="CCustomComboBox.cpp" />
+    <ClCompile Include="CCustomDC.cpp" />
+    <ClCompile Include="CCustomEdit.cpp" />
+    <ClCompile Include="CCustomImageWnd.cpp" />
+    <ClCompile Include="CDigitalFreqView.cpp" />
+    <ClCompile Include="CDlgEdit.cpp" />
+    <ClCompile Include="CDlgMyCallsign.cpp" />
+    <ClCompile Include="CDlgSoundSetting.cpp" />
+    <ClCompile Include="CDlgTrxSetting.cpp" />
+    <ClCompile Include="CDebugView.cpp" />
+    <ClCompile Include="CCallsignHistoryView.cpp" />
+    <ClCompile Include="CFreqDisplayCtrl.cpp" />
+    <ClCompile Include="CGpsHistoryView.cpp" />
+    <ClCompile Include="CListCtrlEx.cpp" />
+    <ClCompile Include="CMessageHistoryView.cpp" />
+    <ClCompile Include="CRepeater.cpp" />
+    <ClCompile Include="CRepeaterView.cpp" />
+    <ClCompile Include="CScrollWnd.cpp" />
+    <ClCompile Include="CSMeterDisplayCtrl.cpp" />
+    <ClCompile Include="IDControl.cpp" />
+    <ClCompile Include="IDControlDoc.cpp" />
+    <ClCompile Include="IDControlView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\IDControl.rc2" />
+    <None Include="res\right_and_left.cur" />
+    <None Include="res\top_and_bottom.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IDControl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\digit_disable.png" />
+    <Image Include="res\digit_enable.png" />
+    <Image Include="res\digit_ptt_on_ng.png" />
+    <Image Include="res\digit_ptt_on_ok.png" />
+    <Image Include="res\digit_pw_off.png" />
+    <Image Include="res\fileview.bmp" />
+    <Image Include="res\fileview_hc.bmp" />
+    <Image Include="res\IDControl.ico" />
+    <Image Include="res\IDControlDoc.ico" />
+    <Image Include="res\smeter_disable.png" />
+    <Image Include="res\smeter_enable.png" />
+    <Image Include="res\smeter_power_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\WAV\0.wav" />
+    <Media Include="res\WAV\1.wav" />
+    <Media Include="res\WAV\2.wav" />
+    <Media Include="res\WAV\3.wav" />
+    <Media Include="res\WAV\4.wav" />
+    <Media Include="res\WAV\5.wav" />
+    <Media Include="res\WAV\6.wav" />
+    <Media Include="res\WAV\7.wav" />
+    <Media Include="res\WAV\8.wav" />
+    <Media Include="res\WAV\9.wav" />
+    <Media Include="res\WAV\A.wav" />
+    <Media Include="res\WAV\B.wav" />
+    <Media Include="res\WAV\C.wav" />
+    <Media Include="res\WAV\D.wav" />
+    <Media Include="res\WAV\E.wav" />
+    <Media Include="res\WAV\F.wav" />
+    <Media Include="res\WAV\G.wav" />
+    <Media Include="res\WAV\H.wav" />
+    <Media Include="res\WAV\I.wav" />
+    <Media Include="res\WAV\J.wav" />
+    <Media Include="res\WAV\K.wav" />
+    <Media Include="res\WAV\L.wav" />
+    <Media Include="res\WAV\M.wav" />
+    <Media Include="res\WAV\N.wav" />
+    <Media Include="res\WAV\O.wav" />
+    <Media Include="res\WAV\P.wav" />
+    <Media Include="res\WAV\Q.wav" />
+    <Media Include="res\WAV\R.wav" />
+    <Media Include="res\WAV\S.wav" />
+    <Media Include="res\WAV\Slash.wav" />
+    <Media Include="res\WAV\Space.wav" />
+    <Media Include="res\WAV\T.wav" />
+    <Media Include="res\WAV\U.wav" />
+    <Media Include="res\WAV\V.wav" />
+    <Media Include="res\WAV\W.wav" />
+    <Media Include="res\WAV\X.wav" />
+    <Media Include="res\WAV\Y.wav" />
+    <Media Include="res\WAV\Z.wav" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="IDControl.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

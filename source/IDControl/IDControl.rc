@@ -1,0 +1,870 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+#include "verrsrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 (日本) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""verrsrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#include ""res\\IDControl.rc2""  // Microsoft Visual C++ 以外で編集されたリソース\r\n"
+    "#include ""l.JPN\\afxres.rc""      // 標準コンポーネント\r\n"
+    "#if !defined(_AFXDLL)\r\n"
+    "#include ""l.JPN\\afxprint.rc""        // 印刷/印刷プレビュー リソース\r\n"
+    "#include ""l.JPN\\afxribbon.rc""        // MFC リボンおよびコントロール バー リソース\r\n"
+    "#endif\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREE_VIEW_24        BITMAP                  "res\\fileview_hc.bmp"
+
+IDB_TREE_VIEW           BITMAP                  "res\\fileview.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "ファイル(&F)"
+    BEGIN
+        MENUITEM "レピーターリストインポート(&I)...",        ID_CMD_IMPORT_REPEATER_LIST
+        MENUITEM SEPARATOR
+        MENUITEM "アプリケーションの終了(&X)",             ID_APP_EXIT
+    END
+    POPUP "設定(&S)"
+    BEGIN
+        MENUITEM "無線機設定(&T)...",                ID_CMD_TRX_SETTING
+        MENUITEM "サウンド設定(&S)...",               ID_CMD_SOUND_SETTING
+    END
+    POPUP "表示(&V)"
+    BEGIN
+        POPUP "ツール バーとドッキング ウィンドウ(&T)"
+        BEGIN
+            MENUITEM "<プレースホルダー>",                  ID_VIEW_TOOLBAR
+        END
+        MENUITEM "ステータス バー(&S)",                ID_VIEW_STATUS_BAR
+    END
+    POPUP "ヘルプ(&H)"
+    BEGIN
+        MENUITEM "バージョン情報 (&A)...",             ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_REPEATER MENU
+BEGIN
+    POPUP "レピーター"
+    BEGIN
+        MENUITEM "TOに設定(&T)",                   ID_SET_TO_CALLSIGN
+        MENUITEM "FROMに設定(&F)",                 ID_SET_FROM_CALLSIGN
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE の初期化に失敗しました。OLE ライブラリのバージョンが正しいことを確認してください。"
+    IDP_SOCKETS_INIT_FAILED "Windows ソケットの初期化に失敗しました。"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_OK_BUTTON           "OK"
+    IDS_CANCEL_BUTTON       "Cancel"
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "IDxCtrl\n\nIDxCtrl\nIDxCtrl Files (*.idxctl)\n.idxctl\nIDxCtrl.Document\nIDxCtrl.Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "IDxCtrl"
+    AFX_IDS_IDLEMESSAGE     "準備完了"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "新しいドキュメントを作成\n新規作成"
+    ID_FILE_OPEN            "既存のドキュメントを開く\n開く"
+    ID_FILE_CLOSE           "作業中のドキュメントを閉じる\n閉じる"
+    ID_FILE_SAVE            "作業中のドキュメントを上書きして保存\n保存"
+    ID_FILE_SAVE_AS         "作業中のドキュメントを新しい名前で保存\n名前をつけて保存"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "プログラム情報、バージョン、著作権を表示します。\nバージョン情報"
+    ID_APP_EXIT             "アプリケーションを終了し、ドキュメントの保存を指示\n終了"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE2       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE3       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE4       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE5       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE6       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE7       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE8       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE9       "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE10      "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE11      "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE12      "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE13      "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE14      "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE15      "指定のドキュメントを開く"
+    ID_FILE_MRU_FILE16      "指定のドキュメントを開く"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "次のウィンドウに切り替える\n次のペイン"
+    ID_PREV_PANE            "前のウィンドウに切り替える\n前のペイン"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "作業中のウィンドウを分割\n分割"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "選択範囲を消去\n消去"
+    ID_EDIT_CLEAR_ALL       "すべて消去\nすべて消去"
+    ID_EDIT_COPY            "選択範囲をコピーしてクリップボードに保存\nコピー"
+    ID_EDIT_CUT             "選択範囲を切り取ってクリップボードに保存\n切り取り"
+    ID_EDIT_FIND            "指定した文字列の検索\n検索"
+    ID_EDIT_PASTE           "クリップボードの内容を貼り付け\n貼り付け"
+    ID_EDIT_REPEAT          "直前に行った動作を繰り返す\n繰り返し"
+    ID_EDIT_REPLACE         "指定した文字列を他の文字列で置換\n置換"
+    ID_EDIT_SELECT_ALL      "ファイル内のすべてを選択\nすべて選択"
+    ID_EDIT_UNDO            "直前に行った動作を元に戻す\n元に戻す"
+    ID_EDIT_REDO            "取り消した操作をやり直す\nやり直す"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_STATUS_BAR      "ステータス バーの表示/非表示\nステータス バーの表示切り替え"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "ウィンドウのサイズを変更"
+    AFX_IDS_SCMOVE          "ウィンドウの位置を変更"
+    AFX_IDS_SCMINIMIZE      "ウィンドウを最小化する"
+    AFX_IDS_SCMAXIMIZE      "ウィンドウを最大化する"
+    AFX_IDS_SCNEXTWINDOW    "次のドキュメント ウィンドウに切り替える"
+    AFX_IDS_SCPREVWINDOW    "前のドキュメント ウィンドウに切り替える"
+    AFX_IDS_SCCLOSE         "作業中のウィンドウを閉じ、変更したドキュメントの保存を指示"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "ウィンドウを通常のサイズに戻す"
+    AFX_IDS_SCTASKLIST      "タスク一覧をアクティブにする"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STATUS_PANE1        "ペイン 1"
+    IDS_STATUS_PANE2        "ペイン 2"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TOOLBAR_CUSTOMIZE   "カスタマイズ..."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_REPEATER_VIEW       "レピーター"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_DEBUG_VIEW          "デバッグ"
+    IDS_CALLSIGN_HISTORY_VIEW "コールサイン履歴"
+    IDS_MESSAGE_HISTORY_VIEW "メッセージ履歴"
+    IDS_COMMON_VIEW         "共通設定"
+    IDS_ANALOG_FREQ_VIEW    "A BAND"
+    IDS_DIGITAL_FREQ_VIEW   "B BAND"
+    IDS_GPS_HISTORY_VIEW    "GPS履歴"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_REPEATER            "レピーター"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TRX_SETTING_TITLE   "設定"
+    IDS_TRX_SETTING_PLUGIN_LABEL "無線機"
+    IDS_TRX_SETTING_COM_LABEL "COMポート"
+    IDS_TRX_SETTING_SERVER_PORT_CHECK "サーバーポート"
+    IDS_TRX_SETTING_REMOTE_ADDR_LABEL "接続先ホスト"
+    IDS_TRX_SETTING_REMOTE_PORT_LABEL "接続先ポート"
+    IDS_TRX_SETTING_USER_NAME_LABEL "ログインユーザー名"
+    IDS_TRX_SETTING_USER_PASS_LABEL "ログインパスワード"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SOUND_SETTING_TITLE "サウンド設定"
+    IDS_SOUND_SETTING_MIC_CHECK "音声入力有効"
+    IDS_SOUND_SETTING_SPEAKER_CHECK "音声出力有効"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_HISTORY_VIEW_DATETIME "日時"
+    IDS_HISTORY_VIEW_CALLER "呼出元"
+    IDS_HISTORY_VIEW_MEMO   "メモ"
+    IDS_HISTORY_VIEW_CALLED "呼出先"
+    IDS_HISTORY_VIEW_RX_RPT1 "レピータ1"
+    IDS_HISTORY_VIEW_RX_RPT2 "レピータ2"
+    IDS_HISTORY_VIEW_STATUS "ステータス"
+    IDS_HISTORY_VIEW_MESSAGE "メッセージ"
+    IDS_HISTORY_VIEW_GPS    "GPS"
+END
+
+#endif    // 日本語 (日本) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// ニュートラル (システム標準) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(932)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\IDControl.ico"
+
+IDR_IDControlTYPE       ICON                    "res\\IDControlDoc.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_DIGIT_PTT_ON_NG_PNG PNG                     "res\\digit_ptt_on_ng.png"
+
+IDB_DIGIT_PTT_ON_OK_PNG PNG                     "res\\digit_ptt_on_ok.png"
+
+IDB_DIGIT_PW_OFF_PNG    PNG                     "res\\digit_pw_off.png"
+
+IDB_DIGIT_ENABLE_PNG    PNG                     "res\\digit_enable.png"
+
+IDB_DIGIT_DISABLE_PNG   PNG                     "res\\digit_disable.png"
+
+IDB_SMETER_ENABLE_PNG   PNG                     "res\\smeter_enable.png"
+
+IDB_SMETER_DISABLE_PNG  PNG                     "res\\smeter_disable.png"
+
+IDB_SMETER_PW_OFF_PNG   PNG                     "res\\smeter_power_off.png"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_RIGHT_AND_LEFT_CURSOR CURSOR                  "res\\right_and_left.cur"
+
+IDC_TOP_AND_BOTTOM_CURSOR CURSOR                  "res\\top_and_bottom.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAVE_SLASH          WAVE                    "res\\WAV\\Slash.wav"
+
+IDR_WAVE_SPACE          WAVE                    "res\\WAV\\Space.wav"
+
+IDR_WAVE_0              WAVE                    "res\\WAV\\0.wav"
+
+IDR_WAVE_1              WAVE                    "res\\WAV\\1.wav"
+
+IDR_WAVE_2              WAVE                    "res\\WAV\\2.wav"
+
+IDR_WAVE_3              WAVE                    "res\\WAV\\3.wav"
+
+IDR_WAVE_4              WAVE                    "res\\WAV\\4.wav"
+
+IDR_WAVE_5              WAVE                    "res\\WAV\\5.wav"
+
+IDR_WAVE_6              WAVE                    "res\\WAV\\6.wav"
+
+IDR_WAVE_7              WAVE                    "res\\WAV\\7.wav"
+
+IDR_WAVE_8              WAVE                    "res\\WAV\\8.wav"
+
+IDR_WAVE_9              WAVE                    "res\\WAV\\9.wav"
+
+IDR_WAVE_A              WAVE                    "res\\WAV\\A.wav"
+
+IDR_WAVE_B              WAVE                    "res\\WAV\\B.wav"
+
+IDR_WAVE_C              WAVE                    "res\\WAV\\C.wav"
+
+IDR_WAVE_D              WAVE                    "res\\WAV\\D.wav"
+
+IDR_WAVE_E              WAVE                    "res\\WAV\\E.wav"
+
+IDR_WAVE_F              WAVE                    "res\\WAV\\F.wav"
+
+IDR_WAVE_G              WAVE                    "res\\WAV\\G.wav"
+
+IDR_WAVE_H              WAVE                    "res\\WAV\\H.wav"
+
+IDR_WAVE_I              WAVE                    "res\\WAV\\I.wav"
+
+IDR_WAVE_J              WAVE                    "res\\WAV\\J.wav"
+
+IDR_WAVE_K              WAVE                    "res\\WAV\\K.wav"
+
+IDR_WAVE_L              WAVE                    "res\\WAV\\L.wav"
+
+IDR_WAVE_M              WAVE                    "res\\WAV\\M.wav"
+
+IDR_WAVE_N              WAVE                    "res\\WAV\\N.wav"
+
+IDR_WAVE_O              WAVE                    "res\\WAV\\O.wav"
+
+IDR_WAVE_P              WAVE                    "res\\WAV\\P.wav"
+
+IDR_WAVE_Q              WAVE                    "res\\WAV\\Q.wav"
+
+IDR_WAVE_R              WAVE                    "res\\WAV\\R.wav"
+
+IDR_WAVE_S              WAVE                    "res\\WAV\\S.wav"
+
+IDR_WAVE_T              WAVE                    "res\\WAV\\T.wav"
+
+IDR_WAVE_U              WAVE                    "res\\WAV\\U.wav"
+
+IDR_WAVE_V              WAVE                    "res\\WAV\\V.wav"
+
+IDR_WAVE_W              WAVE                    "res\\WAV\\W.wav"
+
+IDR_WAVE_X              WAVE                    "res\\WAV\\X.wav"
+
+IDR_WAVE_Y              WAVE                    "res\\WAV\\Y.wav"
+
+IDR_WAVE_Z              WAVE                    "res\\WAV\\Z.wav"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "IDxCtrl"
+FONT 9, "MS UI Gothic", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,20,20
+    LTEXT           "IDxCtrl Version 1.00",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012-2016 JO3XWC",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_TRX_SETTING DIALOGEX 0, 0, 285, 182
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DIALOG_TITLE"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "PLUGIN_LABEL",IDC_PLUGIN_LABEL,18,6,126,8
+    COMBOBOX        IDC_PLUGIN_COMBO,18,18,128,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "COMPORT_LABEL",IDC_COMPORT_LABEL,18,42,126,8
+    COMBOBOX        IDC_COMPORT_COMBO,18,55,90,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "SERVER_PORT_CHECK",IDC_SERVER_PORT_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,42,126,10
+    EDITTEXT        IDC_SERVER_PORT_EDIT,150,54,84,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "HOST_ADDR_LABEL",IDC_HOST_ADDR_LABEL,18,78,126,8
+    EDITTEXT        IDC_HOST_ADDR_EDIT,18,90,126,14,ES_AUTOHSCROLL
+    LTEXT           "HOST_PORT_LABEL",IDC_HOST_PORT_LABEL,150,78,126,8
+    EDITTEXT        IDC_HOST_PORT_EDIT,150,90,84,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "USER_NAME_LABEL",IDC_USER_NAME_LABEL,18,114,126,8
+    EDITTEXT        IDC_USER_NAME_EDIT,18,126,126,14,ES_AUTOHSCROLL
+    LTEXT           "USER_PASS_LABEL",IDC_USER_PASS_LABEL,150,114,126,8
+    EDITTEXT        IDC_USER_PASS_EDIT,150,126,126,14,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,174,156,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,228,156,50,14
+END
+
+IDD_EDIT DIALOGEX 0, 0, 132, 50
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,7,118,14,ES_AUTOHSCROLL
+    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,21,29,50,14
+    CONTROL         "Cancel",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,75,29,50,14
+END
+
+IDD_EDIT_MY_CALLSIGN DIALOGEX 0, 0, 132, 50
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_CALLSIGN_EDIT,7,7,72,14,ES_AUTOHSCROLL
+    CONTROL         "OK",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,21,29,50,14
+    CONTROL         "Cancel",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,75,29,50,14
+    EDITTEXT        IDC_MEMO_EDIT,91,7,34,14,ES_AUTOHSCROLL
+    LTEXT           "/",IDC_STATIC,84,10,8,8
+END
+
+IDD_SOUND_SETTING DIALOGEX 0, 0, 231, 110
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DIALOG_TITLE"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_MIC_PLUGIN_COMBO,12,18,210,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,63,90,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,117,90,50,14
+    COMBOBOX        IDC_SPEAKER_PLUGIN_COMBO,12,54,210,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "IDC_MIC_PLUGIN_CHECK",IDC_MIC_PLUGIN_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,6,150,10
+    CONTROL         "IDC_SPEAKER_PLUGIN_CHECK",IDC_SPEAKER_PLUGIN_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,42,150,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080004b0"
+        BEGIN
+            VALUE "CompanyName", "JO3XWC"
+            VALUE "FileDescription", "IDxCtrl"
+            VALUE "FileVersion", "1.00.0.1"
+            VALUE "InternalName", "IDxCtrl.exe"
+            VALUE "LegalCopyright", "(C) 2012-2016 JO3XWC"
+            VALUE "OriginalFilename", "IDxCtrl.exe"
+            VALUE "ProductName", "IDxCtrl"
+            VALUE "ProductVersion", "1.00.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x800, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_TRX_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 278
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 43
+    END
+
+    IDD_EDIT_MY_CALLSIGN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 43
+    END
+
+    IDD_SOUND_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_TRX_SETTING AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_EDIT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_EDIT_MY_CALLSIGN AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_ABOUTBOX AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_SOUND_SETTING AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // ニュートラル (システム標準) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英語 (米国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_OK_BUTTON           "OK"
+    IDS_CANCEL_BUTTON       "Cancel"
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "IDxCtrl\n\nIDxCtrl\nIDxCtrl Files (*.idxctl)\n.idxctl\nIDxCtrl.Document\nIDxCtrl.Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "IDxCtrl"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle Status Bar"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STATUS_PANE1        "Pane 1"
+    IDS_STATUS_PANE2        "Pane 2"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TOOLBAR_CUSTOMIZE   "Customize..."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_REPEATER_VIEW       "Repeater"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_DEBUG_VIEW          "Debug"
+    IDS_CALLSIGN_HISTORY_VIEW "Callsign History"
+    IDS_MESSAGE_HISTORY_VIEW "Message History"
+    IDS_COMMON_VIEW         "Common"
+    IDS_ANALOG_FREQ_VIEW    "A BAND"
+    IDS_DIGITAL_FREQ_VIEW   "B BAND"
+    IDS_GPS_HISTORY_VIEW    "GPS History"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_REPEATER            "Repeater"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TRX_SETTING_TITLE   "Setting"
+    IDS_TRX_SETTING_PLUGIN_LABEL "Plugin"
+    IDS_TRX_SETTING_COM_LABEL "COM No"
+    IDS_TRX_SETTING_SERVER_PORT_CHECK "Server Enable"
+    IDS_TRX_SETTING_REMOTE_ADDR_LABEL "Remote Address"
+    IDS_TRX_SETTING_REMOTE_PORT_LABEL "Remote Port"
+    IDS_TRX_SETTING_USER_NAME_LABEL "User Name"
+    IDS_TRX_SETTING_USER_PASS_LABEL "Password"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SOUND_SETTING_TITLE "Sound Settings"
+    IDS_SOUND_SETTING_MIC_CHECK "Enable Input"
+    IDS_SOUND_SETTING_SPEAKER_CHECK "Enable Output"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_HISTORY_VIEW_DATETIME "Date/Time"
+    IDS_HISTORY_VIEW_CALLER "Caller"
+    IDS_HISTORY_VIEW_MEMO   "Memo"
+    IDS_HISTORY_VIEW_CALLED "Called"
+    IDS_HISTORY_VIEW_RX_RPT1 "RPT1"
+    IDS_HISTORY_VIEW_RX_RPT2 "RPT2"
+    IDS_HISTORY_VIEW_STATUS "Status"
+    IDS_HISTORY_VIEW_MESSAGE "Message"
+    IDS_HISTORY_VIEW_GPS    "GPS"
+END
+
+#endif    // 英語 (米国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE 17, 1
+#include "res\IDControl.rc2"  // Microsoft Visual C++ 以外で編集されたリソース
+#include "l.JPN\afxres.rc"      // 標準コンポーネント
+#if !defined(_AFXDLL)
+#include "l.JPN\afxprint.rc"        // 印刷/印刷プレビュー リソース
+#include "l.JPN\afxribbon.rc"        // MFC リボンおよびコントロール バー リソース
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

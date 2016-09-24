@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Common">
+      <UniqueIdentifier>{d976e107-08c4-4e4a-acf2-14e472e99ff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\View">
+      <UniqueIdentifier>{78db63c5-cb9e-4573-86e3-638203f0c721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Dialog">
+      <UniqueIdentifier>{2f36aa46-ac54-4680-b32f-c8fde9deafee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Voice">
+      <UniqueIdentifier>{42913e92-2186-4fa3-bb03-f3b6824c9b8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\View\CustomControl">
+      <UniqueIdentifier>{8285eeb9-2d8c-4df1-a383-36444e6e607c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\WAV">
+      <UniqueIdentifier>{fbf5592e-d627-4beb-bb60-ffcdebbf3fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\PNG">
+      <UniqueIdentifier>{cbe1b5a6-4c8e-4795-a229-226df5e25db6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\CUR">
+      <UniqueIdentifier>{60344bf6-ecc3-4714-b991-a810dd5b8f9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IDControl.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="IDControlDoc.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="IDControlView.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CMemFileEx.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Debug.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\plugin.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Utility.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CTcpServerCmd.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NoDebug.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CTcpCommon.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CTcpServer.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CMd5.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgTrxSetting.h">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="CDebugView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CRepeaterView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CCIVCache.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CListCtrlEx.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CCallsignHistoryView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CMessageHistoryView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CRepeater.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CI-V.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CDirectSound.h">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CDirectSoundCommon.h">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\g711.h">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="CCustomComboBox.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CCustomDC.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CCustomButton.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommonView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CScrollWnd.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CWavePlay.h">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CDirectSoundBuffer.h">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnalogFreqView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CCustomImageWnd.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CFreqDisplayCtrl.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CDigitalFreqView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CCustomEdit.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGpsHistoryView.h">
+      <Filter>ソース ファイル\View</Filter>
+    </ClInclude>
+    <ClInclude Include="CSMeterDisplayCtrl.h">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgSoundSetting.h">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgMyCallsign.h">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgEdit.h">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IDControl.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="IDControlDoc.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="IDControlView.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Debug.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Utility.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CMemFileEx.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CTcpServerCmd.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CTcpServer.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CMd5.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgTrxSetting.cpp">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="CDebugView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CRepeaterView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CCIVCache.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\plugin.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CListCtrlEx.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CCallsignHistoryView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CMessageHistoryView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CRepeater.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CDirectSound.cpp">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\g711.cpp">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="CCustomComboBox.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CCustomDC.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CCustomButton.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommonView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CScrollWnd.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CWavePlay.cpp">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CDirectSoundBuffer.cpp">
+      <Filter>ソース ファイル\Voice</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnalogFreqView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CCustomImageWnd.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CFreqDisplayCtrl.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CDigitalFreqView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CCustomEdit.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGpsHistoryView.cpp">
+      <Filter>ソース ファイル\View</Filter>
+    </ClCompile>
+    <ClCompile Include="CSMeterDisplayCtrl.cpp">
+      <Filter>ソース ファイル\View\CustomControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgSoundSetting.cpp">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgMyCallsign.cpp">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgEdit.cpp">
+      <Filter>ソース ファイル\Dialog</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\IDControl.rc2">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="res\right_and_left.cur">
+      <Filter>リソース ファイル\CUR</Filter>
+    </None>
+    <None Include="res\top_and_bottom.cur">
+      <Filter>リソース ファイル\CUR</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IDControl.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\fileview.bmp">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\fileview_hc.bmp">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\IDControlDoc.ico">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\IDControl.ico">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\digit_ptt_on_ng.png">
+      <Filter>リソース ファイル\PNG</Filter>
+    </Image>
+    <Image Include="res\digit_ptt_on_ok.png">
+      <Filter>リソース ファイル\PNG</Filter>
+    </Image>
+    <Image Include="res\digit_pw_off.png">
+      <Filter>リソース ファイル\PNG</Filter>
+    </Image>
+    <Image Include="res\digit_disable.png">
+      <Filter>リソース ファイル\PNG</Filter>
+    </Image>
+    <Image Include="res\digit_enable.png">
+      <Filter>リソース ファイル\PNG</Filter>
+    </Image>
+    <Image Include="res\smeter_enable.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\smeter_disable.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="res\smeter_power_off.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\WAV\0.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\1.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\2.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\3.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\4.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\5.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\6.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\7.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\8.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\9.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\A.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\B.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\C.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\D.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\E.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\F.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\G.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\H.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\I.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\J.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\K.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\L.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\M.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\N.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\O.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\P.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\V.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\W.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\X.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\Y.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\Z.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\Space.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\T.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\U.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\S.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\Slash.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\R.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+    <Media Include="res\WAV\Q.wav">
+      <Filter>リソース ファイル\WAV</Filter>
+    </Media>
+  </ItemGroup>
+</Project>

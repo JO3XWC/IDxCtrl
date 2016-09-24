@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Common">
+      <UniqueIdentifier>{478a1b10-4bd9-4f03-aab1-18d799cd0d21}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ID92.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Debug.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\CMemFileEx.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\CSerialPort.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CID92SerialPort.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\plugin.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ID92.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\Debug.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\plugin.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\CMemFileEx.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\CSerialPort.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CID92SerialPort.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\NoDebug.h">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ID92.def">
+      <Filter>ソース ファイル</Filter>
+    </None>
+    <None Include="res\ID92.rc2">
+      <Filter>リソース ファイル</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ID92.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
