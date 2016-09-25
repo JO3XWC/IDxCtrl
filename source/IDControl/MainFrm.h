@@ -115,6 +115,10 @@ private:
 		VOICE_MONITOR	= 0x04,
 	};
 	
+	CStringArray	m_MyCallsignArray;
+	CStringArray	m_MyMemoArray;
+	INT				m_MyCallsignIndex;
+
 	HANDLE			m_hWorkerThread;
 	HANDLE			m_hWorkEvent;
 	HANDLE			m_hStopEvent;

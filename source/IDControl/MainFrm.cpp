@@ -54,6 +54,7 @@ CMainFrame::CMainFrame()
 	m_hStopEvent		= ::CreateEvent (NULL, TRUE, FALSE, NULL);
 	m_hWorkEvent		= ::CreateEvent (NULL, FALSE, FALSE, NULL);
 	m_VoiceEnable		= 0;
+	m_MyCallsignIndex	= -1;
 
 	::ZeroMemory (&m_Plugin, sizeof (m_Plugin));
 }
@@ -914,7 +915,11 @@ VOID CMainFrame::StartIDCtrl ()
 
 VOID CMainFrame::StopIDCtrl ()
 {
-	m_VoiceEnable = 0;
+	m_VoiceEnable		= 0;
+	m_MyCallsignIndex	= -1;
+
+	m_MyCallsignArray.RemoveAll ();
+	m_MyMemoArray.RemoveAll ();
 
 	m_TcpServer.Close ();
 
@@ -980,6 +985,10 @@ ULONG CMainFrame::OnDataCallback (ULONG Type, PVOID pBuffer, ULONG Length)
 	case TYPE_CACHE_CLEAR:
 		{
 			m_CivCache.Clear ();
+
+			m_MyCallsignArray.RemoveAll ();
+			m_MyMemoArray.RemoveAll ();
+			m_MyCallsignIndex = -1;
 		}
 		break;
 
@@ -989,6 +998,10 @@ ULONG CMainFrame::OnDataCallback (ULONG Type, PVOID pBuffer, ULONG Length)
 			{
 				//シリアル通信が途切れたのでキャッシュをクリア
 				m_CivCache.Clear ();
+
+				m_MyCallsignArray.RemoveAll ();
+				m_MyMemoArray.RemoveAll ();
+				m_MyCallsignIndex = -1;
 				break;
 			}
 
@@ -1351,16 +1364,43 @@ VOID CMainFrame::OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG Length)
 	case CIV_SQL_LEVEL2:
 	case CIV_SIGNAL_LEVEL1:
 	case CIV_SIGNAL_LEVEL2:
-	case CIV_DV_MY_CALLSIGN_MEMCH:
 		{
 		}
 		break;
 
+
 	case CIV_PTT_STATUS:
 		{
-			if (p[6] == 0x00)//00=RX, 02=TX, 01=TX NG
+			switch (p[6])//0x00=RX, 0x02=TX, 0x01=TX NG
 			{
-				m_WaveSpeech.Stop ();
+			case 0x00:
+				{
+					m_WaveSpeech.Stop ();
+				}
+				break;
+
+			case 0x02:
+				{
+					UCHAR pTx[256] = {0};
+
+					if (m_CivCache.Lookup (CIV_DV_TX_CALLSIGN, pTx, sizeof (pTx)))
+					{
+						CString strCaller;
+						CString strMemo;
+						CString strRpt2		= DATA2STR (pTx + 6, 8);
+						CString strRpt1		= DATA2STR (pTx + 14, 8);
+						CString strCalled	= DATA2STR (pTx + 22, 8);
+
+						if ((m_MyCallsignIndex != -1) && (m_MyCallsignArray.GetCount () > m_MyCallsignIndex))
+						{
+							strCaller	= m_MyCallsignArray.GetAt (m_MyCallsignIndex);
+							strMemo		= m_MyMemoArray.GetAt (m_MyCallsignIndex);
+						}
+
+						m_wndCallsignHistoryView.AddTxCall (strCaller, strMemo, strCalled, strRpt1, strRpt2);
+					}
+				}
+				break;
 			}
 		}
 		break;
@@ -1450,11 +1490,20 @@ VOID CMainFrame::OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG Length)
 	case CIV_DV_MY_CALLSIGN5:
 	case CIV_DV_MY_CALLSIGN6:
 		{
-#ifdef _DEBUG
 			CString strCall = DATA2STR (p + 7, 8); 
 			CString strMemo = DATA2STR (p + 15, 4); 
+#ifdef _DEBUG
 			m_wndDebugView.AddFormat (_T("SERIAL : MYCALL%u %s/%s"), Trx, strCall.GetString (), strMemo.GetString ());
 #endif
+		
+			m_MyCallsignArray.SetAtGrow (p[6] - 1, strCall);
+			m_MyMemoArray.SetAtGrow (p[6] - 1, strMemo);
+		}
+		break;
+
+	case CIV_DV_MY_CALLSIGN_MEMCH:
+		{
+			m_MyCallsignIndex = p[6] - 1;
 		}
 		break;
 

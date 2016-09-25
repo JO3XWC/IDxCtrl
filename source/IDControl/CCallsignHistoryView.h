@@ -20,6 +20,7 @@ protected:
 public:
 	virtual BOOL PreTranslateMessage(MSG* pMsg);
 	BOOL AddRxCall (PVOID pBuffer, ULONG Length, CString* pstrCaller, CString* pstrCalled);
+	BOOL AddTxCall (CString strCaller, CString strMemo, CString strCalled, CString strRpt1, CString strRpt2);
 
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);

@@ -452,3 +452,78 @@ BOOL CCallsignHistoryView::AddRxCall (PVOID pBuffer, ULONG Length, CString* pstr
 	return TRUE;
 }
 
+BOOL CCallsignHistoryView::AddTxCall (CString strCaller, CString strMemo, CString strCalled, CString strRpt1, CString strRpt2)
+{
+	CTime			Time	= CTime::GetCurrentTime ();
+	CString			strStatus;
+	CString			strFileName;
+	CString			strTime;
+	CStringArray	NewArray;
+	CString			strLogDir	 = GetMyDir () + _T("LOG\\History\\");
+	CStringA		strLogTextA;
+	CStringA		strSpace = "        ";
+
+	DBG_MSG((_T("CCallsignHistoryView::AddRxCall")));
+
+	strTime.Format (_T("%s"), Time.Format (_T("%Y/%m/%d %H:%M:%S")).GetString ());
+
+	strStatus = _T("TX");
+
+	NewArray.SetAtGrow (COLUMN_DATETIME, strTime);
+	NewArray.SetAtGrow (COLUMN_CALLER, strCaller);
+	NewArray.SetAtGrow (COLUMN_MEMO, strMemo);
+	NewArray.SetAtGrow (COLUMN_CALLED, strCalled);
+	NewArray.SetAtGrow (COLUMN_RX_RPT1, strRpt1);
+	NewArray.SetAtGrow (COLUMN_RX_RPT2, strRpt2);
+	NewArray.SetAtGrow (COLUMN_STATUS, strStatus);
+
+	strFileName.Format (_T("%s%s"), strLogDir.GetString (), Time.Format (_T("%Y\\%m%d\\History_%Y%m%d.txt")).GetString ());
+	strLogDir = strFileName.Left (strFileName.ReverseFind ('\\') + 1);
+	
+	if (::GetFileAttributes (strLogDir) == INVALID_FILE_ATTRIBUTES)
+	{	::SHCreateDirectory (NULL, strLogDir);
+	}
+	
+	//LOG CLOSE?
+	if (m_LogFile.GetFilePath () != strFileName)
+	{
+		if (m_LogFile.m_hFile != INVALID_HANDLE_VALUE)
+		{
+			m_LogFile.Close ();
+		}
+	}
+
+	//LOG OPEN
+	if (m_LogFile.m_hFile == INVALID_HANDLE_VALUE)
+	{
+		CFileException Excep;
+		if (m_LogFile.Open (strFileName, CFile::modeCreate | CFile::modeNoTruncate | CFile::modeWrite | CFile::shareDenyWrite, &Excep))
+		{
+			m_LogFile.SeekToEnd ();
+		}
+	}
+
+	//LOG WRITE
+	if (m_LogFile.m_hFile != INVALID_HANDLE_VALUE)
+	{
+		strLogTextA = "";
+		for (int i=0;i<COLUMN_MAX;i++)
+		{
+			strLogTextA.AppendFormat("%s\t", CStringA (NewArray.GetAt (i)).GetString ());
+		}
+		strLogTextA += "\r\n";
+
+		try
+		{
+			m_LogFile.Write (strLogTextA.GetString (), strLogTextA.GetLength ());
+		}
+		catch (...)
+		{
+		}
+	}
+
+	//UPDATE DISPLAY
+	AddHistory (&NewArray);
+
+	return TRUE;
+}
