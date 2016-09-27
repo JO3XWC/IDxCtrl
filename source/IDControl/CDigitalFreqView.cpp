@@ -358,6 +358,20 @@ void CDigitalFreqScrollView::UpdateMyCallsign()
 	m_MyMenu.SetCurSel (SelIndex);
 }
 
+void CDigitalFreqScrollView::UpdateRxCs()
+{
+	CStringArray Array;
+
+	m_UrCombo.ResetContent ();
+
+	theApp.GetRxCs (&Array);
+
+	for (int i=0;i<Array.GetCount ();i++)
+	{
+		m_UrCombo.AddString (Array.GetAt (i));
+	}
+}
+
 void CDigitalFreqScrollView::OnRepeaterListChange()
 {
 	POSITION			Pos;
@@ -754,6 +768,7 @@ void CDigitalFreqScrollView::OnCsCmbSelChange (UINT nID)
 {
 	INT				Index;
 	CRepeater*		pRepeater;
+	CString			strCallSign;
 
 	DBG_MSG((_T("CDigitalFreqScrollView::OnCsCmbSelChange - nID=%u\n"), nID));
 	
@@ -761,8 +776,13 @@ void CDigitalFreqScrollView::OnCsCmbSelChange (UINT nID)
 	{
 	case IDC_CS_CMB_UR:
 		{
-			//AfxGetMainWnd ()->SendMessage (WM_DIGITAL_FREQ_VIEW, IDC_CMB_SQL, m_Sql.GetSelectedItemData ());
-			ASSERT (FALSE);
+			Index = m_UrCombo.GetCurSel ();
+			if (Index == CB_ERR)
+			{	break;
+			}
+			m_UrCombo.SetCurSel (-1);
+			m_UrCombo.GetLBText (Index, strCallSign);
+			AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_TO_CALLSIGN, reinterpret_cast<WPARAM>(strCallSign.GetString ()));
 		}
 		break;
 
@@ -775,7 +795,7 @@ void CDigitalFreqScrollView::OnCsCmbSelChange (UINT nID)
 
 			pRepeater = reinterpret_cast<CRepeater*>(m_R1Combo.GetItemData (Index));
 		
-			AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CRepeater::SET_FROM_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
+			AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_TOFROM_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
 		}
 		break;
 
@@ -1331,4 +1351,9 @@ VOID CDigitalFreqView::OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG Length)
 void CDigitalFreqView::OnRepeaterListChange()
 {
 	m_View.OnRepeaterListChange ();
+}
+
+void CDigitalFreqView::UpdateRxCs()
+{
+	m_View.UpdateRxCs ();
 }

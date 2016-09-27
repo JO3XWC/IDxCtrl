@@ -197,8 +197,14 @@ int CIDControlApp::ExitInstance()
 #define SECTION_CONFIG			_T("Config")
 #define CONFIG_SPEECH_LEVEL		_T("SPEECH_LEVEL")
 
+#define SECTION_RX_CS			_T("RxCs")
+#define RX_CS_FORMAT			_T("%u")
+#define RX_CS_MAX				30
+
 VOID CIDControlApp::SaveSetting ()
 {
+	CString		strTemp;
+
 	WriteProfileString (SECTION_PLUGIN, PLUGIN_PATH				, m_Setting.m_Trx.m_strPluginPath);
 	WriteProfileInt    (SECTION_PLUGIN, PLUGIN_COM				, m_Setting.m_Trx.m_ComNo);
 
@@ -216,11 +222,12 @@ VOID CIDControlApp::SaveSetting ()
 	WriteProfileString (SECTION_SPEAKER, SPEAKER_DEVICE			, m_Setting.m_Speaker.m_strID);
 
 	WriteProfileInt    (SECTION_CONFIG, CONFIG_SPEECH_LEVEL		, m_Setting.m_SpeechLevel);
+
+	SaveRxCs ();
 }
 
 VOID CIDControlApp::LoadSetting ()
 {
-	CString strText;
 
 	m_Setting.m_Trx.m_ComNo				= GetProfileInt    (SECTION_PLUGIN, PLUGIN_COM				, 1); 
 	m_Setting.m_Trx.m_strPluginPath		= GetProfileString (SECTION_PLUGIN, PLUGIN_PATH				, _T(""));
@@ -239,7 +246,96 @@ VOID CIDControlApp::LoadSetting ()
 	m_Setting.m_Speaker.m_strID			= GetProfileString (SECTION_SPEAKER, SPEAKER_DEVICE			, _T(""));
 
 	m_Setting.m_SpeechLevel				= GetProfileInt    (SECTION_CONFIG, CONFIG_SPEECH_LEVEL		, 20);
+	
+	LoadRxCs ();
+}
 
+VOID CIDControlApp::LoadRxCs ()
+{
+	CString strName;
+
+	for (INT i = RX_CS_MAX-1;i>=0;i--)
+	{
+		strName.Format (RX_CS_FORMAT, i);
+		AddRxCs (GetProfileString (SECTION_RX_CS, strName, _T("")), FALSE);
+	}
+}
+
+VOID CIDControlApp::SaveRxCs ()
+{
+	CString		strName;
+	POSITION	Pos;
+	INT			Index = 0;
+
+	Pos = m_RxCsList.GetHeadPosition ();
+	while (Pos != NULL)
+	{
+		strName.Format (RX_CS_FORMAT, Index++);
+		WriteProfileString (SECTION_RX_CS, strName, m_RxCsList.GetNext (Pos));
+	}
+	
+	for (;Index<RX_CS_MAX;Index++)
+	{
+		strName.Format (RX_CS_FORMAT, Index);
+		WriteProfileString (SECTION_RX_CS, strName, _T(""));
+	}
+
+}
+
+VOID CIDControlApp::AddRxCs (LPCTSTR pszCallSign, BOOL Save)
+{
+	POSITION	Pos;
+	CString		strCallSign (pszCallSign);
+
+	do
+	{
+		if (strCallSign.IsEmpty ())
+		{	break;
+		}
+
+		strCallSign = strCallSign.Left (8);
+		strCallSign.Trim ();
+
+		Pos = m_RxCsList.GetHeadPosition ();
+		while (Pos != NULL)
+		{
+			if (m_RxCsList.GetAt (Pos) == strCallSign)
+			{
+				m_RxCsList.RemoveAt (Pos);
+				break;
+			}
+			m_RxCsList.GetNext (Pos);
+		}
+
+		m_RxCsList.AddHead (strCallSign);
+
+		while (m_RxCsList.GetCount () > RX_CS_MAX)
+		{
+			m_RxCsList.RemoveTail ();
+		}
+
+		if (Save)
+		{
+			SaveRxCs ();
+		}
+	}
+	while (0);
+}
+
+VOID CIDControlApp::GetRxCs (CStringArray* pArray)
+{
+	POSITION	Pos;
+
+	do
+	{
+		Pos = m_RxCsList.GetHeadPosition ();
+		while (Pos != NULL)
+		{
+			pArray->Add (m_RxCsList.GetNext (Pos));
+		}
+
+	}
+	while (0);
 }
 
 

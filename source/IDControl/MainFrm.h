@@ -118,6 +118,7 @@ private:
 	CStringArray	m_MyCallsignArray;
 	CStringArray	m_MyMemoArray;
 	INT				m_MyCallsignIndex;
+	
 
 	HANDLE			m_hWorkerThread;
 	HANDLE			m_hWorkEvent;
@@ -137,6 +138,13 @@ public:
 	afx_msg void OnCmdImportRepeaterList();
 	afx_msg void OnUpdateCmdSoundSetting(CCmdUI *pCmdUI);
 	afx_msg void OnCmdSoundSetting();
+
+public:
+	enum
+	{	
+		SET_TO_CALLSIGN,
+		SET_TOFROM_CALLSIGN,
+	};
 };
 
 

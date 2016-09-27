@@ -46,13 +46,6 @@ private:
 	ULONG		m_RepeaterTone;
 	CString		m_strRepeaterTone;
 	ULONG		m_Rpt1Use;
-
-public:
-	enum
-	{	
-		SET_TO_CALLSIGN,
-		SET_FROM_CALLSIGN,
-	};
 };
 
 class CRepeaterList

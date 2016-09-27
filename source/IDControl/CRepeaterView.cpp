@@ -267,7 +267,7 @@ void CRepeaterView::OnSetToCallsign()
 		{	break;
 		}
 
-		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CRepeater::SET_TO_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
+		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_TO_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
 	}
 	while (0);
 }
@@ -320,7 +320,7 @@ void CRepeaterView::OnSetFromCallsign()
 		{	break;
 		}
 
-		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CRepeater::SET_FROM_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
+		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_TOFROM_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
 	}
 	while (0);
 }
@@ -457,7 +457,7 @@ void CRepeaterView::OnNMDblclkTree(NMHDR *pNMHDR, LRESULT *pResult)
 		{	break;
 		}
 
-		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CRepeater::SET_FROM_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
+		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_TOFROM_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
 	}
 	while (0);
 

@@ -18,6 +18,7 @@ public:
 
 	VOID OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG Length);
 	VOID OnRepeaterListChange ();
+	VOID UpdateRxCs ();
 
 
 protected:
@@ -150,6 +151,7 @@ public:
 
 	VOID OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG Length);
 	VOID OnRepeaterListChange ();
+	VOID UpdateRxCs ();
 
 // オーバーライド
 public:

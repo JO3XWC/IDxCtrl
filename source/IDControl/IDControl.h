@@ -70,10 +70,21 @@ public:
 		
 		ULONG			m_SpeechLevel;
 
+
 	}m_Setting;
 
 	VOID LoadSetting ();
 	VOID SaveSetting ();
+
+public:
+	//RX -> CS
+	VOID LoadRxCs ();
+	VOID SaveRxCs ();
+	VOID AddRxCs (LPCTSTR pszCallSign, BOOL Save = TRUE);
+	VOID GetRxCs (CStringArray* pArray);
+
+private:
+	CStringList	m_RxCsList;
 
 public:
 	CRepeaterList* GetRepeaterList ()

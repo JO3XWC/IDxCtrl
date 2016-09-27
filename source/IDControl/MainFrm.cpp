@@ -171,7 +171,8 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	//m_WaveSpeech.Play (strLebelA);
 
 
-	m_wndDigitalFreqView.OnRepeaterListChange();
+	m_wndDigitalFreqView.OnRepeaterListChange ();
+	m_wndDigitalFreqView.UpdateRxCs ();
 
 
 
@@ -707,15 +708,16 @@ LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 
 	do
 	{
-		pRepeater = reinterpret_cast<CRepeater*>(lp);
-		if (pRepeater == NULL)
-		{	break;
-		}
 
 		switch (wp)
 		{
-		case CRepeater::SET_FROM_CALLSIGN:
+		case CMainFrame::SET_TOFROM_CALLSIGN:
 			{
+				pRepeater = reinterpret_cast<CRepeater*>(lp);
+				if (pRepeater == NULL)
+				{	break;
+				}
+
 				//SET VFO
 				pCmdHdr->m_Type = CIV_VFO_MR_CALL_SELECTION2;
 				pCmdHdr->m_Length = sizeof (PACKET_CMD_HEADER) + 1;
@@ -733,17 +735,17 @@ LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 				}
 
 				if (strUrCallsign == _T("CQCQCQ  "))
-				{	strCallsign.Format(_T("% 8s"), pRepeater->GetCallsign ());
+				{	strCallsign.Format(_T("%- 8s"), pRepeater->GetCallsign ());
 				}
 				else
-				{	strCallsign.Format(_T("% 8s"), pRepeater->GetGateway ());
+				{	strCallsign.Format(_T("%- 8s"), pRepeater->GetGateway ());
 				}
 				strCallsign = strCallsign.Left (8);
 
-				strCallsign.AppendFormat(_T("% 8s"), pRepeater->GetCallsign ());
+				strCallsign.AppendFormat(_T("%- 8s"), pRepeater->GetCallsign ());
 				strCallsign = strCallsign.Left (16);
 
-				strCallsign.AppendFormat(_T("% 8s"), strUrCallsign.GetString ());
+				strCallsign.AppendFormat(_T("%- 8s"), strUrCallsign.GetString ());
 				strCallsign = strCallsign.Left (24);
 
 				pCmdHdr->m_Type = CIV_DV_TX_CALLSIGN;
@@ -777,8 +779,28 @@ LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 			}
 			break;
 
-		case CRepeater::SET_TO_CALLSIGN:
+		case CMainFrame::SET_TO_CALLSIGN:
 			{
+				//SET TX CALLSIGN
+				TmpLen = m_CivCache.Lookup (CIV_DV_TX_CALLSIGN, pBuffer, sizeof (pBuffer));
+				
+				CString strRpt2		= DATA2STR (pBuffer + 6, 8);
+				CString strRpt1		= DATA2STR (pBuffer + 14, 8);
+				CString strCalled	= DATA2STR (pBuffer + 22, 8);
+				CString strCallsign;
+
+				strCallsign.Format (_T("%- 8s"), strRpt2.GetString ());
+
+				strCallsign.AppendFormat(_T("%- 8s"), strRpt1.GetString ());
+				strCallsign = strCallsign.Left (16);
+
+				strCallsign.AppendFormat (_T("%- 8s"), reinterpret_cast<LPCTSTR>(lp));
+				strCallsign = strCallsign.Left (24);
+
+				pCmdHdr->m_Type = CIV_DV_TX_CALLSIGN;
+				pCmdHdr->m_Length = sizeof (PACKET_CMD_HEADER) + 24;
+				STR2DATA (strCallsign, pData, 24);
+				AddWork (TYPE_COMMAND, pCmdHdr, pCmdHdr->m_Length);
 			}
 			break;
 
@@ -1407,8 +1429,17 @@ VOID CMainFrame::OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG Length)
 
 	case CIV_DV_RX_CALLSIGN:
 		{
+			CString strCaller;
 			CString strCalled;
-			m_wndCallsignHistoryView.AddRxCall (pBuffer, Length, &m_strLastCaller, &strCalled);
+			m_wndCallsignHistoryView.AddRxCall (pBuffer, Length, &strCaller, &strCalled);
+			
+			if (!strCaller.IsEmpty ())
+			{
+				m_strLastCaller = strCaller;
+				theApp.AddRxCs (strCaller);
+
+				m_wndDigitalFreqView.UpdateRxCs ();
+			}
 		}
 		break;
 
