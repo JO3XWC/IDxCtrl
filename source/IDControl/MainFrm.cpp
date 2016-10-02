@@ -615,15 +615,6 @@ LRESULT CMainFrame::OnDigitalFreqView(WPARAM wp, LPARAM lp)
 
 
 		//MENU---------------------------------------------------
-	case CDigitalFreqScrollView::IDC_CS_CMB_UR_MENU:
-		{
-			//SET TX CALLSIGN
-			pCmdHdr->m_Type = CIV_DV_TX_CALLSIGN;
-			pCmdHdr->m_Length = sizeof (PACKET_CMD_HEADER) + 24;
-			STR2DATA (reinterpret_cast<LPCTSTR>(lp), pData, 24);
-			AddWork (TYPE_COMMAND, pCmdHdr, pCmdHdr->m_Length);
-		}
-		break;
 
 	case CDigitalFreqScrollView::IDC_CS_CMB_TX_MSG_MENU:
 		{
@@ -699,7 +690,7 @@ LRESULT CMainFrame::OnDigitalFreqView(WPARAM wp, LPARAM lp)
 
 LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 {
-	CRepeater*			pRepeater;
+	CRepeater*			pRepeater		= NULL;
 	UCHAR				TxCache[1024];
 	PACKET_CMD_HEADER*	pCmdHdr			= reinterpret_cast<PACKET_CMD_HEADER*>(TxCache);
 	PUCHAR				pData			= reinterpret_cast<PUCHAR>(pCmdHdr->GetData ());
@@ -798,6 +789,26 @@ LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 					{	strRpt2 = pRepeater->GetGateway ();
 					}
 				}
+
+				strCallsign.Format (_T("%- 8s"), strRpt2.GetString ());
+				strCallsign = strCallsign.Left (8);
+
+				strCallsign.AppendFormat(_T("%- 8s"), strRpt1.GetString ());
+				strCallsign = strCallsign.Left (16);
+
+				strCallsign.AppendFormat (_T("%- 8s"), strUr.GetString ());
+				strCallsign = strCallsign.Left (24);
+
+				pCmdHdr->m_Type = CIV_DV_TX_CALLSIGN;
+				pCmdHdr->m_Length = sizeof (PACKET_CMD_HEADER) + 24;
+				STR2DATA (strCallsign, pData, 24);
+				AddWork (TYPE_COMMAND, pCmdHdr, pCmdHdr->m_Length);
+			}
+			break;
+
+		case CMainFrame::SET_R1_CALLSIGN:
+			{
+				strRpt1	= reinterpret_cast<LPCTSTR>(lp);
 
 				strCallsign.Format (_T("%- 8s"), strRpt2.GetString ());
 				strCallsign = strCallsign.Left (8);

@@ -940,21 +940,14 @@ void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 			{	break;
 			}
 
-
-			strUr = m_UrCombo.GetTitle ();
-			strR1 = m_R1Combo.GetTitle ();
-			strR2 = m_R2Combo.GetTitle ();
-
-			strUr = strUr.Left (8);
-			strR1 = strR1.Left (8);
-			strR2 = strR2.Left (8);
-
 			switch (Index)
 			{
 			case 0://EDIT
 				{
 					m_R1Menu.SetCurSel (m_LastR1ComboGroup);
 
+					strR1 = m_R1Combo.GetTitle ();
+					strR1 = strR1.Left (8);
 					Dlg.SetText (strR1, 8);
 					if (Dlg.DoModal () != IDOK)
 					{	break;
@@ -962,8 +955,7 @@ void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 					strR1.Format (_T("%- 8s"), Dlg.GetText ());
 					strR1 = strR1.Left (8);
 
-					strCall.Format (_T("%s%s%s"), strR2.GetString (), strR1.GetString (), strUr.GetString ());
-					AfxGetMainWnd ()->SendMessage (WM_DIGITAL_FREQ_VIEW, IDC_CS_CMB_UR_MENU, reinterpret_cast<LPARAM>(strCall.GetString ()));
+					AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_R1_CALLSIGN, reinterpret_cast<LPARAM>(strR1.GetString ()));
 				}
 				break;
 
@@ -973,8 +965,7 @@ void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 
 					strR1 = _T("        ");
 
-					strCall.Format (_T("%s%s%s"), strR2.GetString (), strR1.GetString (), strUr.GetString ());
-					AfxGetMainWnd ()->SendMessage (WM_DIGITAL_FREQ_VIEW, IDC_CS_CMB_UR_MENU, reinterpret_cast<LPARAM>(strCall.GetString ()));
+					AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_R1_CALLSIGN, reinterpret_cast<LPARAM>(strR1.GetString ()));
 				}
 				break;
 
@@ -1016,6 +1007,7 @@ void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 			case 0://EDIT
 				{
 					strR2 = m_R2Combo.GetTitle ();
+					strR2 = strR2.Left (8);
 
 					Dlg.SetText (strR2, 8);
 					if (Dlg.DoModal () != IDOK)
