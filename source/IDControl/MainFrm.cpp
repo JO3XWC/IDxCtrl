@@ -705,6 +705,7 @@ LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 	PUCHAR				pData			= reinterpret_cast<PUCHAR>(pCmdHdr->GetData ());
 	PUSHORT				pData2			= reinterpret_cast<PUSHORT>(pCmdHdr->GetData ());
 	ULONG				TmpLen;
+	CRepeaterList*		pRepeaterList	= theApp.GetRepeaterList ();
 
 	do
 	{
@@ -779,22 +780,33 @@ LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 			}
 			break;
 
-		case CMainFrame::SET_TO_CALLSIGN:
+		case CMainFrame::SET_UR_CALLSIGN:
 			{
 				//SET TX CALLSIGN
 				TmpLen = m_CivCache.Lookup (CIV_DV_TX_CALLSIGN, pBuffer, sizeof (pBuffer));
 				
 				CString strRpt2		= DATA2STR (pBuffer + 6, 8);
 				CString strRpt1		= DATA2STR (pBuffer + 14, 8);
-				CString strCalled	= DATA2STR (pBuffer + 22, 8);
+				CString strCalled	= reinterpret_cast<LPCTSTR>(lp);
 				CString strCallsign;
 
+				if (pRepeaterList->Lookup (strRpt1, pRepeater))
+				{
+					if ((strCalled == _T("CQCQCQ  ")) || (strCalled == _T("        ")))
+					{	strRpt2 = pRepeater->GetCallsign ();
+					}
+					else
+					{	strRpt2 = pRepeater->GetGateway ();
+					}
+				}
+
 				strCallsign.Format (_T("%- 8s"), strRpt2.GetString ());
+				strCallsign = strCallsign.Left (8);
 
 				strCallsign.AppendFormat(_T("%- 8s"), strRpt1.GetString ());
 				strCallsign = strCallsign.Left (16);
 
-				strCallsign.AppendFormat (_T("%- 8s"), reinterpret_cast<LPCTSTR>(lp));
+				strCallsign.AppendFormat (_T("%- 8s"), strCalled.GetString ());
 				strCallsign = strCallsign.Left (24);
 
 				pCmdHdr->m_Type = CIV_DV_TX_CALLSIGN;

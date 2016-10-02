@@ -119,6 +119,30 @@ VOID CRepeaterList::RemoveAt (CRepeater* pRemoveRepeater)
 	delete pRemoveRepeater;
 }
 
+BOOL CRepeaterList::Lookup (LPCTSTR pszCallSign, CRepeater*& pResultRepeater)
+{
+	POSITION	Pos;
+	CRepeater*	pRepeater;
+	BOOL		Result	 = FALSE;
+
+	Pos = m_List.GetHeadPosition ();
+	while (Pos != NULL)
+	{
+		pRepeater = m_List.GetAt (Pos);
+		
+		if (lstrcmp (pszCallSign, pRepeater->GetCallsign ()) == 0)
+		{
+			Result = TRUE;
+			pResultRepeater = pRepeater;
+			break;
+		}
+
+		m_List.GetNext (Pos);
+	}
+
+	return Result;
+}
+
 VOID CRepeaterList::Save (LPCTSTR pszFileName)
 {
 	CRepeater*		pRepeater;

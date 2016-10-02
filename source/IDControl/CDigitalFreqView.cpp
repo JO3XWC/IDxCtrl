@@ -782,7 +782,7 @@ void CDigitalFreqScrollView::OnCsCmbSelChange (UINT nID)
 			}
 			m_UrCombo.SetCurSel (-1);
 			m_UrCombo.GetLBText (Index, strCallSign);
-			AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_TO_CALLSIGN, reinterpret_cast<WPARAM>(strCallSign.GetString ()));
+			AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_UR_CALLSIGN, reinterpret_cast<WPARAM>(strCallSign.GetString ()));
 		}
 		break;
 
@@ -852,38 +852,6 @@ void CDigitalFreqScrollView::OnCsCmbSelChange (UINT nID)
 	}
 }
 
-VOID CDigitalFreqScrollView::SetTxCallSign (CRepeater* pRepeater, CString strR2, CString strR1, CString strUr)
-{
-	CString			strCall;
-	CString			strTemp;
-
-	if (pRepeater != NULL)
-	{
-		if ((strUr == _T("        ")) || (strUr == _T("CQCQCQ  ")))
-		{
-			strR2 = pRepeater->GetCallsign ();
-		}
-		else
-		{
-			strR2 = pRepeater->GetGateway ();
-		}
-		
-		if (theApp.GetRepeaterList ()->m_Map.Lookup (strR2, (void*&)pRepeater))
-		{
-			strTemp.Format (_T("%s (%s)"), pRepeater->GetCallsign (), pRepeater->GetName ());
-			m_R2Combo.SetTitle (strTemp);
-		}
-	}
-	else
-	{
-		strR2 = _T("        ");
-		m_R2Combo.SetTitle (strR2);
-	}
-
-	strCall.Format (_T("%s%s%s"), strR2.GetString (), strR1.GetString (), strUr.GetString ());
-	AfxGetMainWnd ()->SendMessage (WM_DIGITAL_FREQ_VIEW, IDC_CS_CMB_UR_MENU, reinterpret_cast<LPARAM>(strCall.GetString ()));
-}
-
 
 void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 {
@@ -936,7 +904,7 @@ void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 					strUr.Format (_T("%- 8s"), Dlg.GetText ());
 					strUr = strUr.Left (8);
 
-					SetTxCallSign (pRepeater, strR2, strR1, strUr);
+					AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_UR_CALLSIGN, reinterpret_cast<WPARAM>(strUr.GetString ()));
 				}
 				break;
 
@@ -944,7 +912,7 @@ void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 				{
 					strUr = _T("        ");
 
-					SetTxCallSign (pRepeater, strR2, strR1, strUr);
+					AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_UR_CALLSIGN, reinterpret_cast<WPARAM>(strUr.GetString ()));
 				}
 				break;
 
@@ -952,7 +920,7 @@ void CDigitalFreqScrollView::OnCsMenuCmbSelChange (UINT nID)
 				{
 					strUr = _T("CQCQCQ  ");
 
-					SetTxCallSign (pRepeater, strR2, strR1, strUr);
+					AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_UR_CALLSIGN, reinterpret_cast<WPARAM>(strUr.GetString ()));
 				}
 				break;
 

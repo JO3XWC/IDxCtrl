@@ -41,7 +41,6 @@ protected:
 	VOID ResetMyCallsign ();
 	VOID UpdateMyCallsign ();
 	VOID SetMyCallsign (INT Index, LPCTSTR pszCall);
-	VOID SetTxCallSign (CRepeater* pRepeater, CString strUr, CString strR1, CString strR2);
 
 	VOID RepeaterSelectChange (CRepeater* pRepeater);
 public:

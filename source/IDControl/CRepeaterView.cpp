@@ -267,7 +267,7 @@ void CRepeaterView::OnSetToCallsign()
 		{	break;
 		}
 
-		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_TO_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater));
+		AfxGetMainWnd ()->SendMessage (WM_SET_CALLSIGN, CMainFrame::SET_UR_CALLSIGN, reinterpret_cast<WPARAM>(pRepeater->GetCallsign ()));
 	}
 	while (0);
 }

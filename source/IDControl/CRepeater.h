@@ -57,7 +57,9 @@ public:
 	VOID	Clear		();
 	VOID	Load		(LPCTSTR pszFileName);
 	VOID	Save		(LPCTSTR pszFileName);
-	VOID	RemoveAt	(CRepeater* pRepeater);
+	VOID	RemoveAt	(CRepeater* pResultRepeater);
+
+	BOOL	Lookup		(LPCTSTR pszCallSign, CRepeater*& pRepeater);
 public:
 	CList<CRepeater*>	m_List;
 	CMapStringToPtr		m_Map;

@@ -142,7 +142,7 @@ public:
 public:
 	enum
 	{	
-		SET_TO_CALLSIGN,
+		SET_UR_CALLSIGN,
 		SET_TOFROM_CALLSIGN,
 	};
 };
