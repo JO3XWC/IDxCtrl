@@ -32,6 +32,7 @@ VOID CRepeater::Set (CStringArray* pArray)
 		m_strName		= pArray->GetAt (2);
 		m_strSubName	= pArray->GetAt (3);
 		m_strCallsign	= pArray->GetAt (4);
+		m_strToCallsign	= GetToCallsign (m_strCallsign);
 		m_strGateway	= pArray->GetAt (5);
 		m_strFrequency	= pArray->GetAt (6);
 		m_Frequency		= static_cast<ULONGLONG>(_ttof (pArray->GetAt (6)) * 100) * 10000;
@@ -54,6 +55,19 @@ VOID CRepeater::Set (CStringArray* pArray)
 	}
 	while (0);
 }
+
+CString CRepeater::GetToCallsign (CString strCallsign)
+{
+	strCallsign.Trim ();
+	strCallsign = _T("/") + strCallsign;
+	if (strCallsign.GetLength () > 8)
+	{
+		strCallsign = strCallsign.Left (7) + strCallsign.Right (1);
+	}
+
+	return strCallsign;
+}
+
 
 CRepeaterList::CRepeaterList ()
 {
@@ -141,6 +155,11 @@ BOOL CRepeaterList::Lookup (LPCTSTR pszCallSign, CRepeater*& pResultRepeater)
 	}
 
 	return Result;
+}
+
+BOOL CRepeaterList::LookupTo (LPCTSTR pszCallSign, CRepeater*& pResultRepeater)
+{
+	return m_ToMap.Lookup (pszCallSign, (void*&)pResultRepeater);
 }
 
 VOID CRepeaterList::Save (LPCTSTR pszFileName)
@@ -292,6 +311,11 @@ VOID CRepeaterList::Load (LPCTSTR pszFileName)
 			if (!m_Map.Lookup (strCallsign, (void*&)pTmpRepeater))
 			{
 				m_Map.SetAt (strCallsign, pRepeater);
+			}
+
+			if (!m_ToMap.Lookup (pRepeater->GetToCallsign (), (void*&)pTmpRepeater))
+			{
+				m_ToMap.SetAt (pRepeater->GetToCallsign (), pRepeater);
 			}
 
 

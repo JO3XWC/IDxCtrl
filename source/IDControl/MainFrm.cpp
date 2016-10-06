@@ -780,6 +780,11 @@ LRESULT CMainFrame::OnSetCallsign(WPARAM wp,LPARAM lp)
 			{
 				strUr	= reinterpret_cast<LPCTSTR>(lp);
 
+				if (pRepeaterList->Lookup (strUr, pRepeater))
+				{
+					strUr = pRepeater->GetToCallsign ();
+				}
+
 				if (pRepeaterList->Lookup (strRpt1, pRepeater))
 				{
 					if ((strUr == _T("CQCQCQ  ")) || (strUr == _T("        ")))

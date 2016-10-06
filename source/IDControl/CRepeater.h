@@ -14,6 +14,7 @@ public:
 	LPCTSTR		GetName ()			{	return m_strName;		}
 	LPCTSTR		GetSubName ()		{	return m_strSubName;	}
 	LPCTSTR		GetCallsign ()		{	return m_strCallsign;	}
+	LPCTSTR		GetToCallsign ()	{	return m_strToCallsign;	}
 	LPCTSTR		GetGateway ()		{	return m_strGateway;	}
 	ULONGLONG	GetFrequency ()		{	return m_Frequency;		}
 	LPCTSTR		GetFrequencyStr ()	{	return m_strFrequency;	}
@@ -26,6 +27,8 @@ public:
 	LPCTSTR		GetRepeaterToneStr (){	return m_strRepeaterTone;}
 	ULONG		GetRpt1Use ()		{	return m_Rpt1Use;		}
 
+	static CString 	GetToCallsign (CString strCallsign);
+
 private:
 //Group No,Group Name,Name,Sub Name,Repeater Call Sign,Gateway Call Sign,Frequency,Dup,Offset,Mode,TONE,Repeater Tone,RPT1USE,Position,Latitude,Longitude,UTC Offset
 //1,ä÷ìå,èHótå¥430,ìåãûìs,JP1YLA A,JP1YLA G,434.320000,DUP+,5.000000,DV,OFF,88.5Hz,YES,Approximate,35.697750,139.772150,+9:00
@@ -35,6 +38,7 @@ private:
 	CString		m_strName;
 	CString		m_strSubName;
 	CString		m_strCallsign;
+	CString		m_strToCallsign;
 	CString		m_strGateway;
 	ULONGLONG	m_Frequency;
 	CString		m_strFrequency;
@@ -60,7 +64,9 @@ public:
 	VOID	RemoveAt	(CRepeater* pResultRepeater);
 
 	BOOL	Lookup		(LPCTSTR pszCallSign, CRepeater*& pRepeater);
+	BOOL	LookupTo	(LPCTSTR pszCallSign, CRepeater*& pRepeater);
 public:
 	CList<CRepeater*>	m_List;
 	CMapStringToPtr		m_Map;
+	CMapStringToPtr		m_ToMap;
 };

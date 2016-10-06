@@ -657,6 +657,7 @@ VOID CDigitalFreqScrollView::OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG L
 			CString				strUr;
 			CRepeater*			pRepeater;
 			CMapStringToPtr*	pMap = &theApp.GetRepeaterList ()->m_Map;
+			CMapStringToPtr*	pToMap = &theApp.GetRepeaterList ()->m_ToMap;
 
 			strRpt2	= DATA2STR (pC + 6, 8);
 			strRpt1 = DATA2STR (pC + 14, 8);
@@ -665,6 +666,10 @@ VOID CDigitalFreqScrollView::OnCIV (ULONG Trx, ULONG CIV, PVOID pBuffer, ULONG L
 			if (pMap->Lookup (strUr, (void*&)pRepeater))
 			{
 				strUr.Format (_T("%s (%s)"), pRepeater->GetCallsign (), pRepeater->GetName ());
+			}
+			else if (pToMap->Lookup (strUr, (void*&)pRepeater))
+			{
+				strUr.Format (_T("%s (%s)"), pRepeater->GetToCallsign (), pRepeater->GetName ());
 			}
 			
 			if (pMap->Lookup (strRpt1, (void*&)pRepeater))
