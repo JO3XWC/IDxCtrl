@@ -462,7 +462,7 @@ CAPTION "IDxCtrl"
 FONT 9, "MS UI Gothic", 0, 0, 0x1
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,14,14,20,20
-    LTEXT           "IDxCtrl Version 1.00",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "IDxCtrl Version 1.01",IDC_STATIC,42,14,114,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2012-2016 JO3XWC",IDC_STATIC,42,26,114,8
     DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
 END
@@ -531,8 +531,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
+ FILEVERSION 1,1,0,1
+ PRODUCTVERSION 1,1,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -549,12 +549,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "JO3XWC"
             VALUE "FileDescription", "IDxCtrl"
-            VALUE "FileVersion", "1.00.0.1"
+            VALUE "FileVersion", "1.01.0.1"
             VALUE "InternalName", "IDxCtrl.exe"
             VALUE "LegalCopyright", "(C) 2012-2016 JO3XWC"
             VALUE "OriginalFilename", "IDxCtrl.exe"
             VALUE "ProductName", "IDxCtrl"
-            VALUE "ProductVersion", "1.00.0.1"
+            VALUE "ProductVersion", "1.01.0.1"
         END
     END
     BLOCK "VarFileInfo"
