@@ -36,11 +36,11 @@ void CDlgTrxSetting::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMPORT_LABEL		, m_ComPortLabel);
 	DDX_Control(pDX, IDC_COMPORT_COMBO		, m_ComPortComboBox);
 	DDX_Control(pDX, IDC_SERVER_PORT_CHECK	, m_ServerPortCheck);
-	DDX_Control(pDX, IDC_SERVER_PORT_EDIT	, m_RemotePortEditBox);
+	DDX_Control(pDX, IDC_SERVER_PORT_EDIT	, m_ServerPortEditBox);
 	DDX_Control(pDX, IDC_HOST_ADDR_LABEL	, m_RemoteAddrLabel);
 	DDX_Control(pDX, IDC_HOST_ADDR_EDIT		, m_RemoteAddrEditBox);
 	DDX_Control(pDX, IDC_HOST_PORT_LABEL	, m_RemotePortLabel);
-	DDX_Control(pDX, IDC_HOST_PORT_EDIT		, m_ServerPortEditBox);
+	DDX_Control(pDX, IDC_HOST_PORT_EDIT		, m_RemotePortEditBox);
 	DDX_Control(pDX, IDOK					, m_OkButton);
 	DDX_Control(pDX, IDCANCEL				, m_CancelButton);
 	DDX_Control(pDX, IDC_USER_NAME_LABEL	, m_UserNameLabel);
@@ -278,12 +278,12 @@ void CDlgTrxSetting::OnCbnSelchangePluginCombo()
 		m_ComPortLabel.EnableWindow (pPlugin->m_Flags & FLAGS_SERIAL);
 		m_ComPortComboBox.EnableWindow (pPlugin->m_Flags & FLAGS_SERIAL);
 		m_ServerPortCheck.EnableWindow (pPlugin->m_Flags & FLAGS_SERIAL);
-		m_RemotePortEditBox.EnableWindow ((pPlugin->m_Flags & FLAGS_SERIAL) && (m_ServerPortCheck.GetCheck () == BST_CHECKED));
+		m_ServerPortEditBox.EnableWindow ((pPlugin->m_Flags & FLAGS_SERIAL) && (m_ServerPortCheck.GetCheck () == BST_CHECKED));
 
 		m_RemoteAddrLabel.EnableWindow (pPlugin->m_Flags & FLAGS_NETWORK);
 		m_RemoteAddrEditBox.EnableWindow (pPlugin->m_Flags & FLAGS_NETWORK);
 		m_RemotePortLabel.EnableWindow (pPlugin->m_Flags & FLAGS_NETWORK);
-		m_ServerPortEditBox.EnableWindow (pPlugin->m_Flags & FLAGS_NETWORK);
+		m_RemotePortEditBox.EnableWindow (pPlugin->m_Flags & FLAGS_NETWORK);
 
 		if (pPlugin->m_Flags & FLAGS_NETWORK)
 		{
